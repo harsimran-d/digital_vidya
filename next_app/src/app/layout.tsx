@@ -1,4 +1,3 @@
-import AuthNavBar from "@/features/authentication/AuthNavBar";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -14,10 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-green-50">
-        <AuthNavBar />
-        {children}
-      </body>
+      <body className="bg-green-50">{children}</body>
     </html>
   );
 }
