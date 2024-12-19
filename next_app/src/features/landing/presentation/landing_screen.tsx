@@ -1,3 +1,4 @@
+import { signIn } from "@/lib/auth";
 import Link from "next/link";
 
 export default function Landing() {
@@ -9,11 +10,16 @@ export default function Landing() {
       </p>
       <div className="h-2"></div>
       <div className="flex justify-center space-x-2">
-        <Link href="/signup">
-          <button className="rounded-lg border border-black p-1 shadow-md hover:opacity-70">
-            Get Started
-          </button>
-        </Link>
+        <button
+          className="rounded-lg border border-black p-1 shadow-md hover:opacity-70"
+          onClick={async () => {
+            "use server";
+            await signIn();
+          }}
+        >
+          Get Started
+        </button>
+
         <Link href="/signin">
           <button className="p-1 underline hover:opacity-70">
             Have an account?
